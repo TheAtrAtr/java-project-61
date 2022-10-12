@@ -3,11 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Even {
-    static String name;
-
+    private static final String name = Cli.name;
     public static void Game() {
-        Cli.Hello();
-        name = Cli.name;
+
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
         int j = 0;
