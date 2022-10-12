@@ -11,7 +11,7 @@ public class GCD {
         int j = 0;
         for (int i = 0; i < 3; i++) {
             int rnd1 = (int) (Math.random() * 100);
-            int rnd2 = (int) ((Math.random() * 100)+2);
+            int rnd2 = (int) ((Math.random() * 100) + 2);
             System.out.println("Question: " + rnd1 + " " + rnd2);
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();

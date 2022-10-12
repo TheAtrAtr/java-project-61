@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Progression {
     private static final String name = Cli.name;
+
     public static void Game() {
         System.out.println("What number is missing in the progression?");
         int j = 0;
@@ -31,8 +32,7 @@ public class Progression {
             if (answer == array[dotPozition]) {
                 System.out.println("Correct!");
                 j++;
-            }
-            else {
+            } else {
                 System.out.print("Question: ");
                 for (int k = 0; k < arraySize; k++) {
                     if (k == dotPozition)

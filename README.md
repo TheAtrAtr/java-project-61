@@ -8,3 +8,5 @@
 [Демонстрация игрового процесса игры GCD](https://asciinema.org/a/XFmj6iMewWezzJeAMvor1m4km)
 
 [Демонстрация игрового процесса игры Progression](https://asciinema.org/a/ZKTNwstwqAfvO393HUolQksGA)
+
+[Демонстрация игрового процесса игры Prime](https://asciinema.org/a/07NqMZkfA3L4UGPLR4XJry2AJ)

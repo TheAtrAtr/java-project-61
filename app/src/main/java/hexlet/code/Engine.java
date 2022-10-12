@@ -13,6 +13,7 @@ public class Engine {
         gamesList.add("Calc");
         gamesList.add("GCD");
         gamesList.add("Progression");
+        gamesList.add("Prime");
     }
 
     public static void ShowMenu() {
@@ -48,6 +49,10 @@ public class Engine {
             case 5:
                 Cli.Hello();
                 Progression.Game();
+                break;
+            case 6:
+                Cli.Hello();
+                Prime.Game();
                 break;
             case 0:
                 break;
