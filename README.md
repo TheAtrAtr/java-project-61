@@ -6,3 +6,5 @@
 [Демонстрация игрового процесса игры Calc](https://asciinema.org/a/O6pV3uhhPofcdBmlVyiuITEeK)
 
 [Демонстрация игрового процесса игры GCD](https://asciinema.org/a/XFmj6iMewWezzJeAMvor1m4km)
+
+[Демонстрация игрового процесса игры Progression](https://asciinema.org/a/ZKTNwstwqAfvO393HUolQksGA)

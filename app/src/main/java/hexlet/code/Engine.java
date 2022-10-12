@@ -12,9 +12,10 @@ public class Engine {
         gamesList.add("Even");
         gamesList.add("Calc");
         gamesList.add("GCD");
+        gamesList.add("Progression");
     }
 
-    public static void ShowMenu(){
+    public static void ShowMenu() {
         System.out.println("Please enter the game number and press Enter.");
         for (int i = 1; i < gamesList.size(); i++) {
             System.out.printf("%d - %s", i, gamesList.get(i));
@@ -43,6 +44,10 @@ public class Engine {
             case 4:
                 Cli.Hello();
                 GCD.Game();
+                break;
+            case 5:
+                Cli.Hello();
+                Progression.Game();
                 break;
             case 0:
                 break;
