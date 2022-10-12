@@ -11,6 +11,7 @@ public class Engine {
         gamesList.add("Greet");
         gamesList.add("Even");
         gamesList.add("Calc");
+        gamesList.add("GCD");
     }
 
     public static void ShowMenu(){
@@ -38,6 +39,10 @@ public class Engine {
             case 3:
                 Cli.Hello();
                 Calc.Game();
+                break;
+            case 4:
+                Cli.Hello();
+                GCD.Game();
                 break;
             case 0:
                 break;
