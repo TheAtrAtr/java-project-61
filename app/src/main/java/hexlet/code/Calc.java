@@ -10,14 +10,14 @@ public class Calc {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
         int j = 0;
-        int pop = 3;
-        int k1 = 100;
-        int k2 = 29;
-        int k3 = 10;
-        for (int i = 0; i < pop; i++) {
-            int rnd1 = (int) (Math.random() * k1);
-            int rnd2 = (int) (Math.random() * k1);
-            int rnd3 = (int) (Math.random() * k2) / k3;
+        int numberOfRound = 3;
+        int upLimit = 100;
+        int kFactor1 = 29;
+        int kFactor2 = 10;
+        for (int i = 0; i < numberOfRound; i++) {
+            int rnd1 = (int) (Math.random() * upLimit);
+            int rnd2 = (int) (Math.random() * upLimit);
+            int rnd3 = (int) (Math.random() * kFactor1) / kFactor2;
             System.out.println("Question: " + rnd1 + " " + OPERANDS[rnd3] + " " + rnd2);
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();
@@ -37,7 +37,7 @@ public class Calc {
                 break;
             }
         }
-        if (j == pop) {
+        if (j == numberOfRound) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

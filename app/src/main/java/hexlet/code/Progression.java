@@ -7,17 +7,17 @@ public class Progression {
 
     public static void game() {
         System.out.println("What number is missing in the progression?");
-        int pop = 3;
+        int numberOfRound = 3;
         int j = 0;
-        int k1 = 5;
-        int k2 = 11;
+        int kFactor1 = 5;
+        int kFactor2 = 11;
         Scanner scanner = new Scanner(System.in);
-        for (int z = 0; z < pop; z++) {
-            int arraySize = k2 - (int) (Math.random() * k1);
+        for (int z = 0; z < numberOfRound; z++) {
+            int arraySize = kFactor2 - (int) (Math.random() * kFactor1);
             int dotPozition = (int) (Math.random() * arraySize);
             int[] array = new int[arraySize];
-            int stepOfProgression = k2 - (int) (Math.random() * k1);
-            array[0] = k2 - (int) (Math.random() * k1);
+            int stepOfProgression = kFactor2 - (int) (Math.random() * kFactor1);
+            array[0] = kFactor2 - (int) (Math.random() * kFactor1);
             for (int i = 1; i < arraySize; i++) {
                 array[i] = array[i - 1] + stepOfProgression;
             }
@@ -54,7 +54,7 @@ public class Progression {
                 break;
             }
         }
-        if (j == pop) {
+        if (j == numberOfRound) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

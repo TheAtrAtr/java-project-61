@@ -9,11 +9,11 @@ public class Prime {
     public static void game() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        int pop = 3;
+        int numberOfRound = 3;
         int j = 0;
-        int k1 = 1000;
-        for (int i = 0; i < pop; i++) {
-            int rnd = (int) (Math.random() * k1);
+        int upLimit = 1000;
+        for (int i = 0; i < numberOfRound; i++) {
+            int rnd = (int) (Math.random() * upLimit);
             System.out.println("Question: " + rnd);
             boolean b = primeTest(rnd);
             System.out.print("Your answer: ");
@@ -29,7 +29,7 @@ public class Prime {
                 break;
             }
         }
-        if (j == pop) {
+        if (j == numberOfRound) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

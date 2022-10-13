@@ -15,7 +15,7 @@ public class Engine {
         GAMES_LIST.add("Progression");
         GAMES_LIST.add("Prime");
     }
-
+    
     public static void showMenu() {
         System.out.println("Please enter the game number and press Enter.");
         for (int i = 1; i < GAMES_LIST.size(); i++) {

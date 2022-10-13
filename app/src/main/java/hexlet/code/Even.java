@@ -9,11 +9,11 @@ public class Even {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        int pop = 3;
+        int numberOfRound = 3;
         int j = 0;
-        int k1 = 100;
-        for (int i = 0; i < pop; i++) {
-            int rnd = (int) (Math.random() * k1);
+        int upLimit = 100;
+        for (int i = 0; i < numberOfRound; i++) {
+            int rnd = (int) (Math.random() * upLimit);
             System.out.println("Question: " + rnd);
             boolean b = rnd % 2 == 0;
             System.out.print("Your answer: ");
@@ -30,7 +30,7 @@ public class Even {
                 break;
             }
         }
-        if (j == pop) {
+        if (j == numberOfRound) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }
