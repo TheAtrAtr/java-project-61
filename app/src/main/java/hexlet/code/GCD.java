@@ -6,12 +6,12 @@ public class GCD {
     private static final String name = Cli.name;
 
     public static void Game() {
-        System.out.println("What is the result of the expression?");
+        System.out.println("Find the greatest common divisor of given numbers.");
         Scanner scanner = new Scanner(System.in);
         int j = 0;
         for (int i = 0; i < 3; i++) {
             int rnd1 = (int) (Math.random() * 100);
-            int rnd2 = (int) ((Math.random() * 100) + 2);
+            int rnd2 = (int) (Math.random() * 100);
             System.out.println("Question: " + rnd1 + " " + rnd2);
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();
