@@ -3,15 +3,17 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Even {
-    private static final String name = Cli.name;
+    private static final String NAME = Cli.getName();
 
-    public static void Game() {
+    public static void game() {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
+        int pop = 3;
         int j = 0;
-        for (int i = 0; i < 3; i++) {
-            int rnd = (int) (Math.random() * 100);
+        int k1 = 100;
+        for (int i = 0; i < pop; i++) {
+            int rnd = (int) (Math.random() * k1);
             System.out.println("Question: " + rnd);
             boolean b = rnd % 2 == 0;
             System.out.print("Your answer: ");
@@ -24,12 +26,12 @@ public class Even {
                 String s = b ? "yes" : "no";
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", answer, s);
                 System.out.println();
-                System.out.println("Let's try again, " + name + "!");
+                System.out.println("Let's try again, " + NAME + "!");
                 break;
             }
         }
-        if (j == 3) {
-            System.out.println("Congratulations, " + name + "!");
+        if (j == pop) {
+            System.out.println("Congratulations, " + NAME + "!");
         }
     }
 }

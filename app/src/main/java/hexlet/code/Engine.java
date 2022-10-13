@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Engine {
-    static ArrayList<String> gamesList = new ArrayList<>();
+    private static final ArrayList<String> gamesList = new ArrayList<>();
 
     static {
         gamesList.add("Exit");
@@ -16,7 +16,7 @@ public class Engine {
         gamesList.add("Prime");
     }
 
-    public static void ShowMenu() {
+    public static void showMenu() {
         System.out.println("Please enter the game number and press Enter.");
         for (int i = 1; i < gamesList.size(); i++) {
             System.out.printf("%d - %s", i, gamesList.get(i));
@@ -32,29 +32,30 @@ public class Engine {
 
         switch (choice) {
             case 1:
-                Cli.Hello();
+                Cli.hello();
                 break;
             case 2:
-                Cli.Hello();
-                Even.Game();
+                Cli.hello();
+                Even.game();
                 break;
             case 3:
-                Cli.Hello();
-                Calc.Game();
+                Cli.hello();
+                Calc.game();
                 break;
             case 4:
-                Cli.Hello();
-                GCD.Game();
+                Cli.hello();
+                GCD.game();
                 break;
             case 5:
-                Cli.Hello();
-                Progression.Game();
+                Cli.hello();
+                Progression.game();
                 break;
             case 6:
-                Cli.Hello();
-                Prime.Game();
+                Cli.hello();
+                Prime.game();
                 break;
             case 0:
+            default:
                 break;
         }
 

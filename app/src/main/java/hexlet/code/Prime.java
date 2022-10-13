@@ -4,14 +4,16 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Prime {
-    private static final String name = Cli.name;
+    private static final String NAME = Cli.getName();
 
-    public static void Game() {
+    public static void game() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
+        int pop = 3;
         int j = 0;
-        for (int i = 0; i < 3; i++) {
-            int rnd = (int) (Math.random() * 1000);
+        int k1 = 1000;
+        for (int i = 0; i < pop; i++) {
+            int rnd = (int) (Math.random() * k1);
             System.out.println("Question: " + rnd);
             boolean b = primeTest(rnd);
             System.out.print("Your answer: ");
@@ -19,17 +21,16 @@ public class Prime {
             if ((b && answer.equals("yes")) || (!b && answer.equals("no"))) {
                 System.out.println("Correct!");
                 j++;
-
             } else {
                 String s = b ? "yes" : "no";
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", answer, s);
                 System.out.println();
-                System.out.println("Let's try again, " + name + "!");
+                System.out.println("Let's try again, " + NAME + "!");
                 break;
             }
         }
-        if (j == 3) {
-            System.out.println("Congratulations, " + name + "!");
+        if (j == pop) {
+            System.out.println("Congratulations, " + NAME + "!");
         }
     }
 
