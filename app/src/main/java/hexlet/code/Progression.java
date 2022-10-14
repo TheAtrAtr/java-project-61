@@ -4,20 +4,19 @@ import java.util.Scanner;
 
 public class Progression {
     private static final String NAME = Cli.getName();
+    public static final int K_FACTOR_1 = 5;
+    public static final int K_FACTOR_2 = 11;
 
     public static void game() {
         System.out.println("What number is missing in the progression?");
-        int numberOfRound = 3;
         int j = 0;
-        int kFactor1 = 5;
-        int kFactor2 = 11;
         Scanner scanner = new Scanner(System.in);
-        for (int z = 0; z < numberOfRound; z++) {
-            int arraySize = kFactor2 - (int) (Math.random() * kFactor1);
+        for (int z = 0; z < Engine.getNumberOfRound(); z++) {
+            int arraySize = K_FACTOR_2 - (int) (Math.random() * K_FACTOR_1);
             int dotPozition = (int) (Math.random() * arraySize);
             int[] array = new int[arraySize];
-            int stepOfProgression = kFactor2 - (int) (Math.random() * kFactor1);
-            array[0] = kFactor2 - (int) (Math.random() * kFactor1);
+            int stepOfProgression = K_FACTOR_2 - (int) (Math.random() * K_FACTOR_1);
+            array[0] = K_FACTOR_2 - (int) (Math.random() * K_FACTOR_1);
             for (int i = 1; i < arraySize; i++) {
                 array[i] = array[i - 1] + stepOfProgression;
             }
@@ -29,7 +28,6 @@ public class Progression {
                     System.out.print(array[k] + " ");
                 }
             }
-
             System.out.println();
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();
@@ -54,7 +52,7 @@ public class Progression {
                 break;
             }
         }
-        if (j == numberOfRound) {
+        if (j == Engine.getNumberOfRound()) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

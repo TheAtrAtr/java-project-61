@@ -5,19 +5,18 @@ import java.util.Scanner;
 public class Calc {
     private static final String NAME = Cli.getName();
     private static final String[] OPERANDS = {"+", "-", "*"};
+    public static final int UP_LIMIT = 100;
+    public static final int K_FACTOR_1 = 29;
+    public static final int K_FACTOR_2 = 10;
 
     public static void game() {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
         int j = 0;
-        int numberOfRound = 3;
-        int upLimit = 100;
-        int kFactor1 = 29;
-        int kFactor2 = 10;
-        for (int i = 0; i < numberOfRound; i++) {
-            int rnd1 = (int) (Math.random() * upLimit);
-            int rnd2 = (int) (Math.random() * upLimit);
-            int rnd3 = (int) (Math.random() * kFactor1) / kFactor2;
+        for (int i = 0; i < Engine.getNumberOfRound(); i++) {
+            int rnd1 = (int) (Math.random() * UP_LIMIT);
+            int rnd2 = (int) (Math.random() * UP_LIMIT);
+            int rnd3 = (int) (Math.random() * K_FACTOR_1) / K_FACTOR_2;
             System.out.println("Question: " + rnd1 + " " + OPERANDS[rnd3] + " " + rnd2);
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();
@@ -37,7 +36,7 @@ public class Calc {
                 break;
             }
         }
-        if (j == numberOfRound) {
+        if (j == Engine.getNumberOfRound()) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

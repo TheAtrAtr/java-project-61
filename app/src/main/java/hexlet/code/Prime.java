@@ -5,15 +5,14 @@ import java.util.Scanner;
 
 public class Prime {
     private static final String NAME = Cli.getName();
+    public static final int UP_LIMIT = 1000;
 
     public static void game() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        int numberOfRound = 3;
         int j = 0;
-        int upLimit = 1000;
-        for (int i = 0; i < numberOfRound; i++) {
-            int rnd = (int) (Math.random() * upLimit);
+        for (int i = 0; i < Engine.getNumberOfRound(); i++) {
+            int rnd = (int) (Math.random() * UP_LIMIT);
             System.out.println("Question: " + rnd);
             boolean b = primeTest(rnd);
             System.out.print("Your answer: ");
@@ -29,7 +28,7 @@ public class Prime {
                 break;
             }
         }
-        if (j == numberOfRound) {
+        if (j == Engine.getNumberOfRound()) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class Even {
     private static final String NAME = Cli.getName();
+    public static final int UP_LIMIT = 100;
 
     public static void game() {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
-        int numberOfRound = 3;
         int j = 0;
-        int upLimit = 100;
-        for (int i = 0; i < numberOfRound; i++) {
-            int rnd = (int) (Math.random() * upLimit);
+        for (int i = 0; i < Engine.getNumberOfRound(); i++) {
+            int rnd = (int) (Math.random() * UP_LIMIT);
             System.out.println("Question: " + rnd);
             boolean b = rnd % 2 == 0;
             System.out.print("Your answer: ");
@@ -30,7 +29,7 @@ public class Even {
                 break;
             }
         }
-        if (j == numberOfRound) {
+        if (j == Engine.getNumberOfRound()) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

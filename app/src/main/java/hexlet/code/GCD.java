@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class GCD {
     private static final String NAME = Cli.getName();
+    public static final int UP_LIMIT = 100;
 
     public static void game() {
         System.out.println("Find the greatest common divisor of given numbers.");
         Scanner scanner = new Scanner(System.in);
-        int numberOfRound = 3;
         int j = 0;
-        int upLimit = 100;
-        for (int i = 0; i < numberOfRound; i++) {
-            int rnd1 = (int) (Math.random() * upLimit);
-            int rnd2 = (int) (Math.random() * upLimit);
+        for (int i = 0; i < Engine.getNumberOfRound(); i++) {
+            int rnd1 = (int) (Math.random() * UP_LIMIT);
+            int rnd2 = (int) (Math.random() * UP_LIMIT);
             System.out.println("Question: " + rnd1 + " " + rnd2);
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();
@@ -31,7 +30,7 @@ public class GCD {
                 break;
             }
         }
-        if (j == numberOfRound) {
+        if (j == Engine.getNumberOfRound()) {
             System.out.println("Congratulations, " + NAME + "!");
         }
     }

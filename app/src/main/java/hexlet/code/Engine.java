@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 public class Engine {
     private static final ArrayList<String> GAMES_LIST = new ArrayList<>();
+    private static final int NUMBER_OF_ROUND = 3;
+    private static final int CLI = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD_V = 4;
+    private static final int PROGRESSION_V = 5;
+    private static final int PRIME = 6;
 
     static {
         GAMES_LIST.add("Exit");
@@ -15,7 +22,7 @@ public class Engine {
         GAMES_LIST.add("Progression");
         GAMES_LIST.add("Prime");
     }
-    
+
     public static void showMenu() {
         System.out.println("Please enter the game number and press Enter.");
         for (int i = 1; i < GAMES_LIST.size(); i++) {
@@ -31,26 +38,26 @@ public class Engine {
         System.out.println();
 
         switch (choice) {
-            case 1:
+            case CLI:
                 Cli.hello();
                 break;
-            case 2:
+            case EVEN:
                 Cli.hello();
                 Even.game();
                 break;
-            case 3:
+            case CALC:
                 Cli.hello();
                 Calc.game();
                 break;
-            case 4:
+            case GCD_V:
                 Cli.hello();
                 GCD.game();
                 break;
-            case 5:
+            case PROGRESSION_V:
                 Cli.hello();
                 Progression.game();
                 break;
-            case 6:
+            case PRIME:
                 Cli.hello();
                 Prime.game();
                 break;
@@ -59,5 +66,9 @@ public class Engine {
                 break;
         }
 
+    }
+
+    public static int getNumberOfRound() {
+        return NUMBER_OF_ROUND;
     }
 }
