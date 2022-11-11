@@ -20,7 +20,7 @@ public class Prime {
     }
 
     private static void generateRoundData(Map<String, String> roundsData) {
-        int number = (int) (Utils.getRandom() * UP_LIMIT);
+        int number = Utils.getRandom(UP_LIMIT);
         String question = String.valueOf(number);
         String answer = isPrime(number) ? "yes" : "no";
         roundsData.put(question, answer);

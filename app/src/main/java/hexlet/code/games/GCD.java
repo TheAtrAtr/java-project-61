@@ -19,8 +19,8 @@ public class GCD {
     }
 
     private static void generateRoundData(Map<String, String> roundsData) {
-        int number1 = (int) (Utils.getRandom() * UP_LIMIT);
-        int number2 = (int) (Utils.getRandom() * UP_LIMIT);
+        int number1 = Utils.getRandom(UP_LIMIT);
+        int number2 = Utils.getRandom(UP_LIMIT);
         String question = number1 + " " + number2;
         String answer = String.valueOf(calculateGCD(number1, number2));
         roundsData.put(question, answer);
