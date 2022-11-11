@@ -1,35 +1,39 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Calc {
-    private static final String QUESTION_BODY = "What is the result of the expression?";
+    private static final String DESCRIPTION = "What is the result of the expression?";
     private static final char[] OPERANDS = {'+', '-', '*'};
     public static final int UP_LIMIT = 100;
-    public static final int UP_LIMIT_FOR_SELECT_RANDOM_OPERANDS = 3;
 
     public static void runGame() {
-        Map<String, String> questionAnsver = new LinkedHashMap<>();
+        Map<String, String> roundsData = new LinkedHashMap<>();
         for (int i = 0; i < Engine.NUMBER_OF_ROUND; i++) {
-            int rnd1 = (int) (Math.random() * UP_LIMIT);
-            int rnd2 = (int) (Math.random() * UP_LIMIT);
-            int rnd3 = (int) (Math.random() * UP_LIMIT_FOR_SELECT_RANDOM_OPERANDS);
-            char operation = OPERANDS[rnd3];
-            String question = rnd1 + " " + OPERANDS[rnd3] + (" ") + (rnd2) + ("!");
-            String ansver = String.valueOf(calculate(rnd1, rnd2, operation));
-            questionAnsver.put(question, ansver);
+            generateRoundData(roundsData);
         }
-        Engine.run(QUESTION_BODY, questionAnsver);
+        Engine.run(DESCRIPTION, roundsData);
     }
 
-    private static int calculate(int rnd1, int rnd2, char operation) {
+    private static void generateRoundData(Map<String, String> roundsData) {
+        int number1 = (int) (Utils.getRandom() * UP_LIMIT);
+        int number2 = (int) (Utils.getRandom() * UP_LIMIT);
+        int number3 = (int) (Utils.getRandom() * OPERANDS.length);
+        char operation = OPERANDS[number3];
+        String question = number1 + " " + operation + (" ") + (number2) + ("!");
+        String answer = String.valueOf(calculate(number1, number2, operation));
+        roundsData.put(question, answer);
+    }
+
+    private static int calculate(int number1, int number2, char operation) {
         return switch (operation) {
-            case '+' -> rnd1 + rnd2;
-            case '-' -> rnd1 - rnd2;
-            case '*' -> rnd1 * rnd2;
+            case '+' -> number1 + number2;
+            case '-' -> number1 - number2;
+            case '*' -> number1 * number2;
             default -> throw new IllegalStateException("Unexpected value: " + operation);
         };
     }

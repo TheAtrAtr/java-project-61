@@ -1,24 +1,29 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class GCD {
-    private static final String QUESTION_BODY = "Find the greatest common divisor of given numbers.";
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
     public static final int UP_LIMIT = 100;
 
     public static void runGame() {
-        Map<String, String> questionAnsver = new LinkedHashMap<>();
+        Map<String, String> roundsData = new LinkedHashMap<>();
         for (int i = 0; i < Engine.NUMBER_OF_ROUND; i++) {
-            int rnd1 = (int) (Math.random() * UP_LIMIT);
-            int rnd2 = (int) (Math.random() * UP_LIMIT);
-            String question = rnd1 + " " + rnd2;
-            String ansver = String.valueOf(calculateGCD(rnd1, rnd2));
-            questionAnsver.put(question, ansver);
+            generateRoundData(roundsData);
         }
-        Engine.run(QUESTION_BODY, questionAnsver);
+        Engine.run(DESCRIPTION, roundsData);
+    }
+
+    private static void generateRoundData(Map<String, String> roundsData) {
+        int number1 = (int) (Utils.getRandom() * UP_LIMIT);
+        int number2 = (int) (Utils.getRandom() * UP_LIMIT);
+        String question = number1 + " " + number2;
+        String answer = String.valueOf(calculateGCD(number1, number2));
+        roundsData.put(question, answer);
     }
 
     public static int calculateGCD(int a, int b) {

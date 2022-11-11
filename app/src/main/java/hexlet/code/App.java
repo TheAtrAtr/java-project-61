@@ -31,7 +31,7 @@ public class App {
         System.out.println();
         switch (choice) {
             case CLI:
-                Cli.hello();
+                Cli.greet();
                 break;
             case EVEN:
                 Even.runGame();
