@@ -22,7 +22,7 @@ public class Progression {
     private static void generateRoundData(Map<String, String> roundsData) {
         StringBuilder question = new StringBuilder();
         int arraySize = getRandomNumber();
-        int dotPozition = Utils.getRandom(arraySize - 1);
+        int dotPozition = Utils.getRandom(arraySize);
         int stepOfProgression = getRandomNumber();
         int firstElement = getRandomNumber();
         int[] array = getProgressionArray(firstElement, stepOfProgression, arraySize);

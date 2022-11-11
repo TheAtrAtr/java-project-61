@@ -22,7 +22,7 @@ public class Calc {
     private static void generateRoundData(Map<String, String> roundsData) {
         int number1 = Utils.getRandom(UP_LIMIT);
         int number2 = Utils.getRandom(UP_LIMIT);
-        int operandIndex = Utils.getRandom(UP_LIMIT);
+        int operandIndex = Utils.getRandom(OPERANDS.length);
         char operation = OPERANDS[operandIndex];
         String question = number1 + " " + operation + (" ") + (number2) + ("!");
         String answer = String.valueOf(calculate(number1, number2, operation));
