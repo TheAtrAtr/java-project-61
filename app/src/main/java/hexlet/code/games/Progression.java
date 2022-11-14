@@ -25,7 +25,7 @@ public class Progression {
         int dotPozition = Utils.getRandom(arraySize);
         int stepOfProgression = getRandomNumber();
         int firstElement = getRandomNumber();
-        int[] array = getProgressionArray(firstElement, stepOfProgression, arraySize);
+        int[] array = generateProgression(firstElement, stepOfProgression, arraySize);
         for (int k = 0; k < arraySize; k++) {
             if (k == dotPozition) {
                 question.append(".. ");
@@ -41,7 +41,7 @@ public class Progression {
         return Utils.getRandom(UP_LIMIT_RANDOM_NUMBER) + DOWN_LIMIT_RANDOM_NUMBER;
     }
 
-    private static int[] getProgressionArray(int firstElement, int stepOfProgression, int progressionSize) {
+    private static int[] generateProgression(int firstElement, int stepOfProgression, int progressionSize) {
         int[] array = new int[progressionSize];
         array[0] = firstElement;
         for (int i = 1; i < progressionSize; i++) {
